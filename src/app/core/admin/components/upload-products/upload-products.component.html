@@ -1,0 +1,46 @@
+<main>
+  <section>
+    <div class="form-container mat-mdc-card">
+      <h1>Añadir Productos</h1>
+      <mat-vertical-stepper>
+        <form
+          class="form-container__form"
+          [formGroup]="formulario"
+          (submit)="(onSubmit)"
+        >
+          <mat-step class="form-container__step">
+            <ng-template matStepLabel>Datos básicos</ng-template>
+            <app-first-step [firstData]="firstData"></app-first-step>
+            <button mat-flat-button color="primary" matStepperNext>
+              Siguiente
+            </button>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Fotos</ng-template>
+            <app-second-step></app-second-step>
+            <button mat-stroked-button color="primary" matStepperPrevious>
+              Atras
+            </button>
+            <button mat-flat-button color="primary" matStepperNext>
+              Siguiente
+            </button>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Características</ng-template>
+            <!--      <app-third-step></app-third-step> -->
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              (click)="onSubmit()"
+            >
+              Enviar
+            </button>
+          </mat-step>
+        </form>
+      </mat-vertical-stepper>
+    </div>
+  </section>
+</main>

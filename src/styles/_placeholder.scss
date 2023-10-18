@@ -1,0 +1,9 @@
+%module {
+  width: 100%;
+  height: -webkit-fill-available;
+  overflow-y: auto;
+  & main {
+    display: flex;
+    flex-direction: column;
+  }
+}

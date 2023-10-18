@@ -1,0 +1,18 @@
+:host {
+  min-height: 7dvh;
+  display: flex;
+  nav {
+    width: 100%;
+    border-bottom: 1px solid var(--md-sys-color-primary);
+
+    display: flex;
+    padding: 12px 24px;
+    align-items: center;
+
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

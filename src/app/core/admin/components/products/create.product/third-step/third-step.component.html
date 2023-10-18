@@ -1,0 +1,18 @@
+<mat-form-field class="example-full-width" appearance="outline">
+  <mat-label>Ubicación</mat-label>
+  <input
+  type="text"
+  matInput
+  placeholder="https://www.image.com/"
+  formControlName="place">
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Estado del producto</mat-label>
+  <mat-icon matTextSuffix>grade</mat-icon>
+  <mat-select
+  formControlName="stateOfProduct">
+    <mat-option *ngFor="let rate of rates" [value]="rate">
+      {{rate}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

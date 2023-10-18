@@ -1,0 +1,27 @@
+:host {
+  width: 100%;
+  height: -webkit-fill-available;
+  overflow-y: auto;
+  & main {
+    display: flex;
+    flex-direction: column;
+    & section {
+      width: 100%;
+      max-width: none;
+      margin-top: 0;
+    }
+  }
+  & mat-sidenav {
+    & .close {
+      padding: 8px 24px;
+      background-color: white;
+      box-shadow: 0 7px 12px rgb(0 0 0 / 12%);
+      z-index: 11;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+    }
+  }
+}

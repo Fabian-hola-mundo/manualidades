@@ -1,0 +1,31 @@
+<mat-stepper #stepper>
+  <mat-step [stepControl]="formulario" errorMessage="Name is required.">
+    <form [formGroup]="formulario">
+      <ng-template matStepLabel>Datos básicos</ng-template>
+      <app-first-step [firstData]="firstData"></app-first-step>
+      <div>
+        <button mat-raised-button matStepperNext color="primary">Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="formulario" errorMessage="Address is required.">
+    <form [formGroup]="formulario">
+      <ng-template matStepLabel>Imágenes</ng-template>
+      <app-second-step [secondData]="secondData"></app-second-step>
+      <div>
+        <button mat-button matStepperPrevious color="primary">Atras</button>
+        <button mat-raised-button color="primary">Crear</button>
+      </div>
+    </form>
+  </mat-step>
+
+<!--   <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <app-third-step></app-third-step>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step> -->
+</mat-stepper>

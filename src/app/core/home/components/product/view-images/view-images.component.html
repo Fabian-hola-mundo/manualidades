@@ -1,0 +1,17 @@
+<div class="scroll-container">
+  <div *ngFor="let image of allImages; let i = index" class="image">
+    <img [src]="image" alt="" *ngIf="i === imageSelected"/>
+  </div>
+</div>
+
+<!-- <div class="close">
+  <button mat-fab extended color="white" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div> -->
+
+<div class="actions">
+  <div class="actions__more" (click)="nextImage()" >
+    <mat-icon>expand_more</mat-icon>
+  </div>
+</div>

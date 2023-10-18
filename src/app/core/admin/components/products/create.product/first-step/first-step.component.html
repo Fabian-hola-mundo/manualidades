@@ -1,0 +1,29 @@
+<div *ngFor="let input of firstData" class="w-full">
+  <mat-form-field
+    *ngIf="input.input === 'input'"
+    class="w-full"
+    appearance="outline"
+  >
+    <mat-label>{{ input.label }}</mat-label>
+    <input
+      class="w-full"
+      matInput
+      [placeholder]="input.placeholder"
+      [formControlName]="input.formControlName"
+      required
+    />
+    <mat-error *ngIf="input.matError">{{ input.matError }}</mat-error>
+  </mat-form-field>
+  <mat-form-field
+    *ngIf="input.input === 'textarea'"
+    class="w-full"
+    appearance="outline"
+  >
+    <mat-label>{{ input.label }}</mat-label>
+    <textarea
+      matInput
+      [placeholder]="input.placeholder"
+      [formControlName]="input.formControlName"
+    ></textarea>
+  </mat-form-field>
+</div>

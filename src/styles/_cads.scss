@@ -1,0 +1,14 @@
+$container : #2e2536;
+
+.mat-mdc-card {
+  background-color: var(--mat-card) !important;
+}
+.mat-bottom-sheet-container {
+  background-color: rgba($container, 0.3) !important;
+  backdrop-filter: blur(28px);
+  transition: all 200ms ease;
+  &:hover {
+    background-color: rgba($container, 0.6) !important;
+  }
+}
+

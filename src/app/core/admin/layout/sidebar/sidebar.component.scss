@@ -1,0 +1,23 @@
+:host {
+  nav {
+    border-right: 1px solid var(--md-sys-color-primary);
+    height: 100svh;
+    max-width: 500px;
+    width: 100%;
+    & ul {
+      height: 100%;
+      padding: 24px;
+      margin: 0;
+      & li {
+        border: 1px solid var(--md-sys-color-primary);
+        padding: 8px 16px;
+        border-radius: 8px;
+        background-color: var(--md-sys-color-primary);
+        transition: all 200ms ease;
+        list-style: none;
+        cursor: pointer;
+
+      }
+    }
+  }
+}

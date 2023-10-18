@@ -1,0 +1,27 @@
+<div class="product">
+  <div class="product__text">
+    <div class="product__text--basics">
+      <div>
+        <h1>{{ product.title }}</h1>
+        <h3>{{ product.price}}</h3>
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        <button mat-raised-button color="primary">Me lo llevo, ¡YA!</button>
+        <button mat-stroked-button color="primary">
+          ¿Y el descuentico, socio?
+        </button>
+      </div>
+      <p>{{ product.description }}</p>
+      <label>Ver más</label>
+    </div>
+  </div>
+  <div class="product__img">
+    <div
+
+      *ngFor="let image of product.images; let i = index"
+      class="product__img--for"
+    >
+      <img (click)="onOpenImage(i)" [src]="image" alt="Perritos" />
+    </div>
+  </div>
+</div>

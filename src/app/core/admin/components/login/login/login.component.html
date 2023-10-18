@@ -1,0 +1,26 @@
+<main>
+  <div>
+    <h1>Inicia sesión</h1>
+    <form action="">
+      <mat-form-field class="w-full" >
+        <mat-label>{{ input.label }}</mat-label>
+        <input
+          class="w-full"
+          matInput
+          [placeholder]="input.placeholder"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="w-full">
+        <mat-label>{{ input.label }}</mat-label>
+        <input
+          class="w-full"
+          matInput
+          [placeholder]="input.placeholder"
+          required
+        />
+      </mat-form-field>
+    </form>
+    <button routerLink="/admin/panel" mat-raised-button color="primary">Iniciar sesión</button>
+  </div>
+</main>

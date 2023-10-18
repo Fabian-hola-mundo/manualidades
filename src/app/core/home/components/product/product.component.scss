@@ -1,0 +1,40 @@
+* {
+  margin: 0 !important;
+}
+
+::ng-deep {
+  .mat-bottom-sheet-container {
+    padding: 0;
+  }
+}
+
+.product {
+  &__text {
+    padding: 24px;
+    &--basics {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+  &__img {
+    display: flex;
+    gap: 8px;
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 24px;
+    &--for {
+      & img {
+        max-width: 250px;
+        border-radius: 8px;
+        transition: all 200ms ease;
+        aspect-ratio: 9/16;
+        object-fit: cover;
+        &:hover {
+          filter: brightness(1.5);
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+}
