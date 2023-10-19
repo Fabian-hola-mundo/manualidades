@@ -2,12 +2,14 @@
   min-height: 7dvh;
   display: flex;
   nav {
+    z-index: 99;
     width: 100%;
     border-bottom: 1px solid var(--md-sys-color-primary);
 
     display: flex;
     padding: 12px 24px;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 
     & ul {
       display: flex;

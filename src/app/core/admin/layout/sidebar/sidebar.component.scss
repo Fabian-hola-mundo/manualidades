@@ -1,16 +1,19 @@
+@import "../../../../../styles/_placeholder.scss";
+
 :host {
+  border-right: 1px solid rgba(black, 0.12);
   nav {
-    border-right: 1px solid var(--md-sys-color-primary);
+    border-right: 1px solid rgba(black, 0.12);
     height: 100svh;
     max-width: 500px;
     width: 100%;
+    z-index: 2;
     & ul {
       height: 100%;
-      padding: 24px;
       margin: 0;
+      @extend %regularPadding;
       & li {
         border: 1px solid var(--md-sys-color-primary);
-        padding: 8px 16px;
         border-radius: 8px;
         background-color: var(--md-sys-color-primary);
         transition: all 200ms ease;
