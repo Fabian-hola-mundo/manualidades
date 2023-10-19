@@ -23,12 +23,14 @@ import { CreateProductComponent } from './components/products/create.product/cre
 import { SecondStepComponent } from './components/products/create.product/second-step/second-step.component';
 import { ThirdStepComponent } from './components/products/create.product/third-step/third-step.component';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatRippleModule} from '@angular/material/core';
 
 
 const MATERIALCDK = [
   RouterModule,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  MatRippleModule
 ]
 
 const MATERIALCOMPONENTS = [
@@ -42,6 +44,7 @@ const MATERIALCOMPONENTS = [
   MatSidenavModule,
   MatRadioModule,
   MatDividerModule
+
 ]
 
 const COMPONENTS = [

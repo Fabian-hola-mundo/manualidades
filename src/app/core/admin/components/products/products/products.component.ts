@@ -54,6 +54,6 @@ export class ProductsComponent {
 
 
   mode = new FormControl('side' as MatDrawerMode);
-  hasBackdrop = new FormControl(true as null | boolean);
+  hasBackdrop = new FormControl(false as null | boolean);
   position = new FormControl('end' as 'start' | 'end');
 }

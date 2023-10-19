@@ -2,8 +2,10 @@
 
 :host {
   border-right: 1px solid rgba(black, 0.12);
+  max-width: 500px;
   nav {
     border-right: 1px solid rgba(black, 0.12);
+    background-color: rgba( black, 0.08);
     height: 100svh;
     max-width: 500px;
     width: 100%;
@@ -13,9 +15,8 @@
       margin: 0;
       @extend %regularPadding;
       & li {
-        border: 1px solid var(--md-sys-color-primary);
-        border-radius: 8px;
-        background-color: var(--md-sys-color-primary);
+        padding: 4px 12px;
+        border-radius: 4px;
         transition: all 200ms ease;
         list-style: none;
         cursor: pointer;
@@ -23,4 +24,11 @@
       }
     }
   }
+  .onActive {
+    cursor: pointer;
+    border: 1px solid rgba(black, 0.4);
+    font-weight: 500;
+  }
 }
+
+

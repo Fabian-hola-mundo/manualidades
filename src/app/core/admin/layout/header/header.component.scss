@@ -15,6 +15,12 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
+      list-style: none;
+      & li {
+        & img {
+          max-width: 200px;
+        }
+      }
     }
   }
 }
