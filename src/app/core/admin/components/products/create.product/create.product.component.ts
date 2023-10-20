@@ -35,16 +35,22 @@ export class CreateProductComponent {
 
   constructor(
     private productService: ProductsService,
-    private formBuilder: FormBuilder
   ) {
     this.formulario = new FormGroup({
       title: new FormControl(),
       description: new FormControl(),
       price: new FormControl(),
-      image: new FormArray([]),
-      place: new FormControl(),
-      stateOfProduct: new FormControl(),
+     // image: new FormArray([]),
+     // place: new FormControl(),
+     // stateOfProduct: new FormControl(),
     });
+  }
+
+  async onSubmit() {
+    console.log(this.formulario.value);
+    const response = await this.productService.addProduct(this.formulario.value)
+    console.log(response);
+
   }
 
 

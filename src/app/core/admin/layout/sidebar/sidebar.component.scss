@@ -6,16 +6,16 @@
   nav {
     border-right: 1px solid rgba(black, 0.12);
     background-color: rgba( black, 0.08);
-    height: 100svh;
     max-width: 500px;
     width: 100%;
     z-index: 2;
+    height: 100%;
     & ul {
       height: 100%;
       margin: 0;
       @extend %regularPadding;
       & li {
-        padding: 4px 12px;
+        padding: 8px 16px;
         border-radius: 4px;
         transition: all 200ms ease;
         list-style: none;
@@ -28,6 +28,7 @@
     cursor: pointer;
     border: 1px solid rgba(black, 0.4);
     font-weight: 500;
+    background-color: blanchedalmond;
   }
 }
 

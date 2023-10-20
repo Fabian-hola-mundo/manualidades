@@ -6,9 +6,9 @@ import { FirstStepComponent } from './components/products/create.product/first-s
 import { UploadProductsComponent } from './components/upload-products/upload-products.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { AdminRoutingModule } from './admin.routing';
@@ -17,21 +17,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ProductsComponent } from './components/products/products/products.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
 import { CreateProductComponent } from './components/products/create.product/create.product.component';
 import { SecondStepComponent } from './components/products/create.product/second-step/second-step.component';
 import { ThirdStepComponent } from './components/products/create.product/third-step/third-step.component';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatRippleModule} from '@angular/material/core';
-
+import { MatDividerModule } from '@angular/material/divider';
+import { MatRippleModule } from '@angular/material/core';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MATERIALCDK = [
   RouterModule,
   FormsModule,
   ReactiveFormsModule,
-  MatRippleModule
-]
+  MatRippleModule,
+];
 
 const MATERIALCOMPONENTS = [
   MatIconModule,
@@ -43,9 +43,9 @@ const MATERIALCOMPONENTS = [
   MatTableModule,
   MatSidenavModule,
   MatRadioModule,
-  MatDividerModule
-
-]
+  MatDividerModule,
+  MatMenuModule,
+];
 
 const COMPONENTS = [
   FirstStepComponent,
@@ -54,7 +54,7 @@ const COMPONENTS = [
   UploadProductsComponent,
   LayoutComponent,
   HeaderComponent,
-]
+];
 
 @NgModule({
   declarations: [
@@ -63,15 +63,13 @@ const COMPONENTS = [
     SidebarComponent,
     ProductsComponent,
     CreateProductComponent,
-
   ],
   imports: [
     AdminRoutingModule,
     CommonModule,
     ...MATERIALCOMPONENTS,
     ...MATERIALCDK,
-
   ],
   providers: [],
 })
-export class adminModule { }
+export class adminModule {}

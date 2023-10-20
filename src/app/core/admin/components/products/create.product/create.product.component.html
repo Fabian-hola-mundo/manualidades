@@ -3,12 +3,13 @@
     <form [formGroup]="formulario">
       <ng-template matStepLabel>Datos básicos</ng-template>
       <app-first-step [firstData]="firstData"></app-first-step>
+      <button mat-raised-button (click)="onSubmit()" color="primary">añadir</button>
       <div>
         <button mat-raised-button matStepperNext color="primary">Siguiente</button>
       </div>
     </form>
   </mat-step>
-
+<!--
   <mat-step [stepControl]="formulario" errorMessage="Address is required.">
     <form [formGroup]="formulario">
       <ng-template matStepLabel>Imágenes</ng-template>
@@ -18,7 +19,7 @@
         <button mat-raised-button color="primary">Crear</button>
       </div>
     </form>
-  </mat-step>
+  </mat-step> -->
 
 <!--   <mat-step>
     <ng-template matStepLabel>Done</ng-template>

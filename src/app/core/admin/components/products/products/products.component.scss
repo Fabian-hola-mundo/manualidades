@@ -2,26 +2,36 @@
   width: 100%;
   height: -webkit-fill-available;
   overflow-y: auto;
-  & main {
-    display: flex;
-    flex-direction: column;
-    & section {
-      width: 100%;
-      max-width: none;
-      margin-top: 0;
-    }
-  }
-  & mat-sidenav {
-    & .close {
-      padding: 8px 24px;
+  background-color: white !important;
+  & .mat-drawer-container {
+    & main {
       background-color: white;
-      box-shadow: 0 7px 12px rgb(0 0 0 / 12%);
-      z-index: 11;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
+      flex-direction: column;
+      & section {
+        width: 100%;
+        max-width: none;
+        margin-top: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+    & mat-sidenav {
+      & .close {
+        padding: 8px 24px;
+        background-color: white;
+        box-shadow: 0 7px 12px rgb(0 0 0 / 12%);
+        z-index: 11;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+      }
     }
   }
+
 }

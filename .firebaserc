@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "manualidades-chanel"
+  },
+  "targets": {
+    "manualidades-chanel": {
+      "hosting": {
+        "manualidades-chanel2": [
+          "manualidades-chanel"
+        ]
+      }
+    }
   }
 }
