@@ -1,18 +1,22 @@
 @import "../../../../../styles/_placeholder.scss";
+@import "../../../../../styles/tokens/colors.module";
 
 :host {
   border-right: 1px solid rgba(black, 0.12);
   max-width: 500px;
   nav {
     border-right: 1px solid rgba(black, 0.12);
-    background-color: rgba( black, 0.08);
     max-width: 500px;
     width: 100%;
     z-index: 2;
     height: 100%;
+    @media (max-width:1007px) {
+      max-width: none;
+    }
     & ul {
       height: 100%;
       margin: 0;
+      padding: 24px;
       @extend %regularPadding;
       & li {
         padding: 8px 16px;
@@ -20,15 +24,15 @@
         transition: all 200ms ease;
         list-style: none;
         cursor: pointer;
-
       }
     }
   }
   .onActive {
     cursor: pointer;
-    border: 1px solid rgba(black, 0.4);
+    @extend .outline;
+    @extend .tertiary;
+    @extend .on-primary-text;
     font-weight: 500;
-    background-color: blanchedalmond;
   }
 }
 

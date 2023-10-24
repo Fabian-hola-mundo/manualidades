@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  @Output() sidebarOutput = new EventEmitter<boolean>();
+
+  @Input() sidebarchild = true
+
+  sidebar: boolean = false
+
+  changeSidebar() {
+    this.sidebarOutput.emit()
+  }
+
+  constructor(
+
+  ){
+
+  }
 
 }

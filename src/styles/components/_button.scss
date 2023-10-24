@@ -1,0 +1,9 @@
+
+
+button.mat-mdc-raised-button {
+  text-transform: uppercase !important;
+  @extend .primary, .on-primary-text;
+  padding: 12px 24px;
+  height: auto !important;
+  border-radius: 48px;
+}

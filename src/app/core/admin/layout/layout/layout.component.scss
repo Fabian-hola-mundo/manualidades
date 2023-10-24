@@ -9,5 +9,16 @@
     flex: 1;
     display: flex;
     justify-content: flex-start;
+    & mat-drawer-container {
+      width: 100%;
+      box-sizing: content-box;
+      & mat-drawer {
+        ::ng-deep {
+          ::-webkit-scrollbar {
+            display: none !important;
+          }
+        }
+      }
+    }
   }
 }

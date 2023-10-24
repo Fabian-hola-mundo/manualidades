@@ -7,11 +7,21 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
-  input = {
-    label: "LabelTest",
-    placeholder: "Place",
-    formControlName: "FormControl",
-    matError: 'Materror'
-  }
+  hide = true;
+
+  input = [
+    {
+      label: "Correo Electrónico",
+      placeholder: "tucorreo@correo.com",
+      formControlName: "email",
+      matError: 'Materror'
+    },
+    {
+      label: "Contraseña",
+      placeholder: "*******",
+      formControlName: "password",
+      matError: 'Materror'
+    }
+  ]
 
 }

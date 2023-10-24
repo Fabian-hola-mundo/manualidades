@@ -1,3 +1,5 @@
+@import '../../../../../styles/placeholder';
+
 :host {
   min-height: 7dvh;
   display: flex;
@@ -7,7 +9,8 @@
     border-bottom: 1px solid var(--md-sys-color-primary);
 
     display: flex;
-    padding: 12px 24px;
+    padding: 12px;
+    @extend %regularPadding;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 
@@ -17,9 +20,21 @@
       align-items: center;
       width: 100%;
       list-style: none;
+      gap: 12px;
       & li {
         & img {
           max-width: 200px;
+          width: 100%;
+          min-width: 80px;
+          @media (max-width:1007px) {
+            max-width: 150px;
+          }
+        }
+      }
+      & li:nth-child(1) {
+        display: none;
+        @media (max-width:1007px) {
+          display: flex;
         }
       }
     }

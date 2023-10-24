@@ -1,9 +1,19 @@
 <nav class="surface-variant">
   <ul>
+    <li>
+      <button
+        mat-icon-button
+        color="warn"
+        aria-label="Example icon button with a home icon"
+        (click)="changeSidebar()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </li>
     <li><img src="../../../../../assets/layout/logo-horiz.png" alt="" /></li>
     <li>
       <div matRipple class="avatar" [matMenuTriggerFor]="menu">
-        <p>{{ 'A' }}</p>
+        <p>{{ "A" }}</p>
       </div>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>

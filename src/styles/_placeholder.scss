@@ -11,8 +11,10 @@
 }
 
 %regularPadding {
-  padding: $bigPadding;
+  padding-left: $bigPadding !important;
+  padding-right: $bigPadding !important;
   @media (max-width:1007px) {
-    padding: $smallPadding;
+    padding-left: $smallPadding !important;
+    padding-right: $smallPadding !important;
   }
 }
