@@ -1,13 +1,13 @@
 <mat-sidenav-container
   class="example-container"
-  [hasBackdrop]="hasBackdrop.value"
+  [hasBackdrop]="true"
   class="surface-200"
 >
   <mat-sidenav-content
     ><main class="surface">
       <section>
         <h1>Productos</h1>
-        <button mat-raised-button (click)="sidenav.toggle()">
+        <button mat-raised-button (click)="createdProductSide = true">
           Crear producto
         </button>
       </section>
@@ -16,6 +16,7 @@
         <table mat-table [dataSource]="products" class="">
           <mat-text-column name="title" headerText="Título"></mat-text-column>
 
+          <mat-text-column name="id" headerText="id"></mat-text-column>
           <mat-text-column
             name="description"
             headerText="Descripción"
@@ -25,18 +26,60 @@
             justify="end"
             headerText="Precio"
           ></mat-text-column>
+          <mat-text-column
+            name="category"
+            headerText="Categoría"
+          ></mat-text-column>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          <tr
+            (click)="setProductOnRow(row)"
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+          ></tr>
         </table>
       </section>
     </main>
   </mat-sidenav-content>
 
-  <mat-sidenav #sidenav [mode]="mode.value!" [position]="position.value!">
+  <mat-sidenav
+    #seeProduct
+    [opened]="selectedProductSide"
+    (closed)="clearSides()"
+    [mode]="mode.value!"
+    [position]="position.value!"
+    *ngIf="!createdProductSide"
+  >
     <div class="close">
+      <h3>Ver producto</h3>
+      <button
+        (click)="selectedProductSide = false"
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a home icon"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <app-see-product [product]="selectedProduct"></app-see-product>
+  </mat-sidenav>
+
+  <mat-sidenav
+    *ngIf="!selectedProductSide"
+    [opened]="createdProductSide"
+    (closed)="clearSides()"
+    [mode]="mode.value!"
+    [position]="position.value!"
+    class="side-create"
+  >
+  <div class="close">
       <h3>Crear producto</h3>
-      <button (click)="sidenav.toggle()" mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+      <button
+        (click)="createdProductSide = false"
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a home icon"
+      >
         <mat-icon>close</mat-icon>
       </button>
     </div>

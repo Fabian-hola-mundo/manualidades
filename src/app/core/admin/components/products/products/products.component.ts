@@ -6,26 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Product } from 'src/app/interfaces/products';
 import { GetFakeProductsService } from 'src/app/services/get-fake-products.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -34,6 +14,34 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ProductsComponent {
   products: any | Product[] = [];
   dataSource : any;
+  clickedRows = new Set<Product>();
+
+  selectedProduct : Product  = {
+    title: '',
+    category: {
+      id: '',
+      name: '',
+    },
+    id: 0,
+    description: '',
+    price: 0,
+    images: []
+  }
+
+  selectedProductSide: boolean = false
+  createdProductSide: boolean = false
+
+  clearSides(){
+    this.selectedProductSide = false
+    this.createdProductSide = false
+  }
+
+  setProductOnRow(row: Product) {
+    this.selectedProduct = row
+    this.selectedProductSide = true
+    console.log(row);
+    console.log(row.title);
+  }
 
   constructor(
     private fakeProducts: GetFakeProductsService
@@ -48,12 +56,12 @@ export class ProductsComponent {
     });
 
   }
-  displayedColumns: string[] = ['title', 'description', 'price'];
+  displayedColumns: string[] = ['id', 'title', 'description', 'price', 'category'];
 
   headerText = "Test Title";
 
 
-  mode = new FormControl('side' as MatDrawerMode);
-  hasBackdrop = new FormControl(false as null | boolean);
+  mode = new FormControl('over' as MatDrawerMode);
+  hasBackdrop = new FormControl(true as null | boolean);
   position = new FormControl('end' as 'start' | 'end');
 }

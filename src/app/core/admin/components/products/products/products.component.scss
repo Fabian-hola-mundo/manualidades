@@ -1,22 +1,50 @@
+@import "../../../../../../styles/placeholder";
+
 :host {
   width: 100%;
   height: -webkit-fill-available;
   overflow-y: auto;
   background-color: white !important;
   & .mat-drawer-container {
-    & main {
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      & section {
-        width: 100%;
-        max-width: none;
-        margin-top: 0;
+    & mat-sidenav-content {
+      height: 90dvh;
+      & main {
+        background-color: white;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 24px;
+        flex-direction: column;
+        @extend %verticalRegularPadding;
+        & section {
+          width: 100%;
+          max-width: none;
+          margin-top: 0;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 24px;
+          & table {
+            & ::ng-deep {
+              .mat-mdc-row .mat-mdc-cell {
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+                cursor: pointer;
+              }
+              .mat-mdc-row:hover .mat-mdc-cell {
+                border-color: currentColor;
+              }
+            }
+            :nth-child(even) {
+              background-color: rgba(black, 0.02);
+            }
+            & tr {
+              border-radius: 4px !important;
+              cursor: pointer;
+              &:hover {
+                background-color: rgba(black, 0.04);
+              }
+            }
+          }
+        }
       }
     }
     & mat-sidenav {
@@ -32,6 +60,17 @@
         top: 0;
       }
     }
+    ::ng-deep {
+      & .side-create {
+        width: 100%;
+        max-width: 700px;
+      }
+    }
   }
 
+  ::ng-deep {
+    .mat-column-select {
+      overflow: initial !important;
+    }
+  }
 }

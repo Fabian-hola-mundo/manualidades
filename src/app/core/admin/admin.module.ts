@@ -25,6 +25,9 @@ import { ThirdStepComponent } from './components/products/create.product/third-s
 import { MatDividerModule } from '@angular/material/divider';
 import { MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
+import { SeeProductComponent } from './components/products/products/see-product/see-product.component';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 const MATERIALCDK = [
   RouterModule,
@@ -45,6 +48,7 @@ const MATERIALCOMPONENTS = [
   MatRadioModule,
   MatDividerModule,
   MatMenuModule,
+  MatChipsModule
 ];
 
 const COMPONENTS = [
@@ -63,6 +67,7 @@ const COMPONENTS = [
     SidebarComponent,
     ProductsComponent,
     CreateProductComponent,
+    SeeProductComponent,
   ],
   imports: [
     AdminRoutingModule,
