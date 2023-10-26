@@ -22,37 +22,39 @@ import { ProductsService } from 'src/app/services/products.service';
   ],
 })
 export class CreateProductComponent {
-
   formulario!: any;
+  rates: any = [1, 2, 3, 4, 5];
 
   firstData!: DataModel[];
   secondData!: DataModel[];
 
   ngOnInit(): void {
     this.createFirstStep();
-    this.createSecondStep()
+    this.createSecondStep();
   }
 
-  constructor(
-    private productService: ProductsService,
-  ) {
+  constructor(private productService: ProductsService) {
     this.formulario = new FormGroup({
       title: new FormControl(),
       description: new FormControl(),
       price: new FormControl(),
-     // image: new FormArray([]),
-     // place: new FormControl(),
-     // stateOfProduct: new FormControl(),
+      image: new FormGroup({
+        image1: new FormControl(),
+        image2: new FormControl(),
+        image3: new FormControl(),
+      }),
+      place: new FormControl(),
+      stateOfProduct: new FormControl(),
     });
   }
 
   async onSubmit() {
     console.log(this.formulario.value);
-    const response = await this.productService.addProduct(this.formulario.value)
+    const response = await this.productService.addProduct(
+      this.formulario.value
+    );
     console.log(response);
-
   }
-
 
   createFirstStep() {
     this.firstData = [
@@ -86,24 +88,23 @@ export class CreateProductComponent {
       {
         label: 'image',
         input: 'input',
-        formControlName: 'image',
+        formControlName: 'image1',
       },
       {
         label: 'image',
         input: 'input',
-        formControlName: 'image',
+        formControlName: 'image2',
       },
       {
         label: 'image',
         input: 'input',
-        formControlName: 'image',
+        formControlName: 'image3',
       },
       {
         label: 'image',
         input: 'input',
-        formControlName: 'image',
+        formControlName: 'image4',
       },
     ];
   }
-
 }

@@ -27,6 +27,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { SeeProductComponent } from './components/products/products/see-product/see-product.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 const MATERIALCDK = [
@@ -48,7 +49,8 @@ const MATERIALCOMPONENTS = [
   MatRadioModule,
   MatDividerModule,
   MatMenuModule,
-  MatChipsModule
+  MatChipsModule,
+  MatCheckboxModule
 ];
 
 const COMPONENTS = [

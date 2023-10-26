@@ -5,6 +5,7 @@ import { MatDrawerMode } from '@angular/material/sidenav';
 import { MatTableDataSource } from '@angular/material/table';
 import { Product } from 'src/app/interfaces/products';
 import { GetFakeProductsService } from 'src/app/services/get-fake-products.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-products',
@@ -44,12 +45,15 @@ export class ProductsComponent {
   }
 
   constructor(
-    private fakeProducts: GetFakeProductsService
+    private fakeProducts: GetFakeProductsService,
+    private productsService: ProductsService
   ) {
 
   }
 
   ngOnInit(): void {
+
+
     this.fakeProducts.getAllProducts().subscribe((data) => {
       this.products = data;
       this.dataSource = new MatTableDataSource(this.products)
@@ -59,6 +63,7 @@ export class ProductsComponent {
   displayedColumns: string[] = ['id', 'title', 'description', 'price', 'category'];
 
   headerText = "Test Title";
+
 
 
   mode = new FormControl('over' as MatDrawerMode);
