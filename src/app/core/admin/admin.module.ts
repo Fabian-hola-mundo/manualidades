@@ -28,6 +28,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SeeProductComponent } from './components/products/products/see-product/see-product.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { OrdersComponent } from './components/orders/orders/orders.component';
 
 
 const MATERIALCDK = [
@@ -70,6 +71,7 @@ const COMPONENTS = [
     ProductsComponent,
     CreateProductComponent,
     SeeProductComponent,
+    OrdersComponent,
   ],
   imports: [
     AdminRoutingModule,

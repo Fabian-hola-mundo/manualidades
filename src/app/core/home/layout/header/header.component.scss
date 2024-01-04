@@ -9,6 +9,8 @@ nav {
   box-sizing: border-box;
   justify-content: center;
   transition: all 300ms ease;
+  background-color: rgba(white, 0.8);
+  backdrop-filter: blur(4px);
   div {
   border-radius: 8px;
   display: flex;
@@ -19,10 +21,12 @@ nav {
   background-color: var(--mdc-elevated-card-container-color);
   justify-content: space-between;
   align-items: center;
-  & h3 {
-    font-family: 'Libre Baskerville', serif;
-    margin: 0px;
+  & img {
+    max-width: 200px;
+    width: 100%;
+    cursor: pointer;
   }
+
  }
 }
 

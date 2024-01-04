@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 2;
     height: 100%;
-    @media (max-width:1007px) {
+    @media (max-width: 1007px) {
       max-width: none;
     }
     & ul {
@@ -18,9 +18,13 @@
       margin: 0;
       padding: 24px;
       @extend %regularPadding;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
       & li {
         padding: 8px 16px;
         border-radius: 4px;
+        text-align: center;
         transition: all 200ms ease;
         list-style: none;
         cursor: pointer;
@@ -35,5 +39,3 @@
     font-weight: 500;
   }
 }
-
-

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { LayoutComponent } from "./layout/layout/layout.component";
 import { LoginComponent } from "./components/login/login/login.component";
 import { ProductsComponent } from "./components/products/products/products.component";
+import { OrdersComponent } from "./components/orders/orders/orders.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,11 @@ const routes: Routes = [
       {
         path: 'products',
         component: ProductsComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'orders',
+        component: OrdersComponent,
         pathMatch: 'full',
       },
       { path: '', redirectTo: 'products', pathMatch: 'full' },

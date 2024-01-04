@@ -1,27 +1,6 @@
 <main>
   <section>
-    <div class="ur-welcome">
-      <h1>Segundazo</h1>
-      <h2>Lo más barato y fino que verá en el mercado, mi amor... Pásele</h2>
-      <div class="ur-welcome__btn flex-wrap">
-        <button
-          mat-raised-button
-          color="primary"
-          routerLinkActive="router-link-active"
-        >
-          Quiero vender algo
-        </button>
-        <button mat-stroked-button color="primary">Vale mondá</button>
-        <button
-          mat-stroked-button
-          color="primary"
-          [routerLink]="['/nuevo']"
-          routerLinkActive="router-link-active"
-        >
-          Crear nuevo producto
-        </button>
-      </div>
-    </div>
+
     <div class="products">
       <h1>Productos en venta</h1>
       <div class="container">
@@ -43,7 +22,7 @@
             />
             <mat-card-content class="container__item--content">
               <p>
-                {{ product.price | currency:'COP' }}
+                {{ product.price | currency:'COP ' }}
               </p>
             </mat-card-content>
             <!--         <mat-card-actions class="container__item--actions">

@@ -6,18 +6,19 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Product } from 'src/app/interfaces/products';
 import { GetFakeProductsService } from 'src/app/services/get-fake-products.service';
 import { ProductsService } from 'src/app/services/products.service';
+import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
   products: any | Product[] = [];
-  dataSource : any;
+  dataSource: any;
   clickedRows = new Set<Product>();
 
-  selectedProduct : Product  = {
+  selectedProduct: Product = {
     title: '',
     category: {
       id: '',
@@ -26,45 +27,45 @@ export class ProductsComponent {
     id: 0,
     description: '',
     price: 0,
-    images: []
-  }
+    images: [],
+  };
 
-  selectedProductSide: boolean = false
-  createdProductSide: boolean = false
+  selectedProductSide: boolean = false;
+  createdProductSide: boolean = false;
 
-  clearSides(){
-    this.selectedProductSide = false
-    this.createdProductSide = false
+  clearSidebar = this.sidebarService.clearSides();
+
+  clearSides() {
+    this.selectedProductSide = false;
+    this.createdProductSide = false;
   }
 
   setProductOnRow(row: Product) {
-    this.selectedProduct = row
-    this.selectedProductSide = true
-    console.log(row);
-    console.log(row.title);
+    this.selectedProduct = row;
+    this.selectedProductSide = true;
   }
 
   constructor(
     private fakeProducts: GetFakeProductsService,
-    private productsService: ProductsService
-  ) {
-
-  }
+    private productsService: ProductsService,
+    private sidebarService: SidebarService
+  ) {}
 
   ngOnInit(): void {
-
-
     this.fakeProducts.getAllProducts().subscribe((data) => {
       this.products = data;
-      this.dataSource = new MatTableDataSource(this.products)
+      this.dataSource = new MatTableDataSource(this.products);
     });
-
   }
-  displayedColumns: string[] = ['id', 'title', 'description', 'price', 'category'];
+  displayedColumns: string[] = [
+    'id',
+    'title',
+    'description',
+    'price',
+    'category',
+  ];
 
-  headerText = "Test Title";
-
-
+  headerText = 'Test Title';
 
   mode = new FormControl('over' as MatDrawerMode);
   hasBackdrop = new FormControl(true as null | boolean);

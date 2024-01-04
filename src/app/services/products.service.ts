@@ -13,15 +13,22 @@ import { Observable } from 'rxjs';
 })
 export class ProductsService {
   constructor(private firestore: Firestore) {}
+  public productRef = collection(this.firestore, 'product');
 
   addProduct(product: Product) {
-    const productRef = collection(this.firestore, 'product');
-    return addDoc(productRef, product);
+    return addDoc(this.productRef, product);
   }
 
   getProduct(): Observable<Product[]> {
     const productRef = collection(this.firestore, 'product');
     return collectionData(productRef, { idField: 'id' }) as Observable<
+      Product[]
+    >;
+  }
+
+  simpleLog() {
+    console.log(this.productRef);
+    return collectionData(this.productRef, { idField: 'id' }) as Observable<
       Product[]
     >;
   }
